@@ -1,13 +1,6 @@
-param location string = 'swedencentral'
+targetScope = 'subscription'
 
-resource strAccount 'Microsoft.Storage/storageAccounts@2025-08-01' = {
-    name: 'strabtest'
-    location: location
-    kind: 'StorageV2'
-    sku: {
-        name: 'Standard_LRS'
-    }
-    properties: {
-    accessTier: 'Hot'
-  }
+resource rg 'Microsoft.Resources/resourceGroups@2025-04-01' = {
+  name: 'rg-azure-bicep'
+  location: 'swedencentral'
 }
